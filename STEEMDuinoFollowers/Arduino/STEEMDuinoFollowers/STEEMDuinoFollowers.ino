@@ -14,8 +14,6 @@ void loop() {
   int currentinfo = 0;
   steemname = "";
   followers = "";
-  if (oldfollowers == "")
-    oldfollowers = followers;
   while (Serial.available() == 0)
   {}
   steemname = Serial.readStringUntil('|');
@@ -26,6 +24,8 @@ void loop() {
   lcd.print(steemname);
   lcd.setCursor(0, 1);
   lcd.print(followers);
+  if (oldfollowers == "")
+    oldfollowers = followers;
   if (oldfollowers != followers)
   {
    tone(8, 800);
