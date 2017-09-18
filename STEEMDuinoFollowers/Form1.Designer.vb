@@ -39,7 +39,7 @@ Partial Class Form1
         Me.Button1.Location = New System.Drawing.Point(12, 94)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(213, 23)
-        Me.Button1.TabIndex = 5
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Display Followers"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -67,7 +67,7 @@ Partial Class Form1
         Me.NumericUpDown2.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(76, 20)
-        Me.NumericUpDown2.TabIndex = 9
+        Me.NumericUpDown2.TabIndex = 2
         Me.NumericUpDown2.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label6
@@ -84,7 +84,7 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(30, 25)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(153, 20)
-        Me.TextBox1.TabIndex = 11
+        Me.TextBox1.TabIndex = 1
         '
         'Label1
         '
