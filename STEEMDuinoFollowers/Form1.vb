@@ -39,7 +39,7 @@ Public Class Form1
         GetFollowersAndSend()
     End Sub
     Private Sub GetFollowersAndSend()
-        Dim myWebRequest As Net.WebRequest = Net.WebRequest.Create("https://moisescardona.me/steem/getFollowersCount/?a=" & TextBox1.Text)
+        Dim myWebRequest As Net.WebRequest = Net.WebRequest.Create("https://api.steem.place/getFollowersCount/?a=" & TextBox1.Text)
         Dim myWebResponse As Net.WebResponse = myWebRequest.GetResponse()
         Dim ReceiveStream As Stream = myWebResponse.GetResponseStream()
         Dim encode As Encoding = System.Text.Encoding.GetEncoding("utf-8")
