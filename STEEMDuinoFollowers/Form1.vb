@@ -39,12 +39,16 @@ Public Class Form1
         GetFollowersAndSend()
     End Sub
     Private Sub GetFollowersAndSend()
-        Dim myWebRequest As Net.WebRequest = Net.WebRequest.Create("https://api.steem.place/getFollowersCount/?a=" & TextBox1.Text)
-        Dim myWebResponse As Net.WebResponse = myWebRequest.GetResponse()
-        Dim ReceiveStream As Stream = myWebResponse.GetResponseStream()
-        Dim encode As Encoding = System.Text.Encoding.GetEncoding("utf-8")
-        Dim readStream As New StreamReader(ReceiveStream, encode)
-        If ArduinoSerialPort.IsOpen = False Then ArduinoSerialPort.Open()
-        ArduinoSerialPort.Write(TextBox1.Text & ":|" & readStream.ReadLine & " followers")
+        Try
+            Dim myWebRequest As Net.WebRequest = Net.WebRequest.Create("https://api.steem.place/getFollowersCount/?a=" & TextBox1.Text)
+            Dim myWebResponse As Net.WebResponse = myWebRequest.GetResponse()
+            Dim ReceiveStream As Stream = myWebResponse.GetResponseStream()
+            Dim encode As Encoding = System.Text.Encoding.GetEncoding("utf-8")
+            Dim readStream As New StreamReader(ReceiveStream, encode)
+            If ArduinoSerialPort.IsOpen = False Then ArduinoSerialPort.Open()
+            ArduinoSerialPort.Write(TextBox1.Text & ":|" & readStream.ReadLine & " followers")
+        Catch
+            GetFollowersAndSend()
+        End Try
     End Sub
 End Class
